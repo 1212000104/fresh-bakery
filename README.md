@@ -1,2 +1,2 @@
 # fresh-bakery
-delicious pastries from chewy to crunchy 
+delicious pastries from soft texture to crunchy 
