@@ -1,2 +1,846 @@
-# <img width="250" height="250" alt="ChatGPT Image 09_24_31 9 thg 3, 2026" src="https://github.com/user-attachments/assets/1a760b0d-1a03-484c-8b49-064821860043" /> <img width="150" height="150" alt="ChatGPT Image 09_32_56 9 thg 3, 2026" src="https://github.com/user-attachments/assets/ac4ce640-ab78-4422-aa69-dcc4e5530b7a" />  
-Delicious pastries from soft texture to crunchy 
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Bakery 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink-deep: #c2185b;
+    --pink-main: #e91e8c;
+    --pink-mid: #f48fb1;
+    --pink-light: #fce4ec;
+    --pink-pale: #fff0f6;
+    --pink-bg: #ffd6e7;
+    --gold: #d4a017;
+    --cream: #fff8f0;
+    --text-dark: #3a1a2e;
+    --text-mid: #6d3b58;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: ‘Nunito’, sans-serif;
+background: linear-gradient(135deg, #ffd6e7 0%, #ffb3d1 30%, #fce4ec 60%, #ff99c2 100%);
+min-height: 100vh;
+color: var(–text-dark);
+overflow-x: hidden;
+}
+
+/* Floating decorations */
+body::before {
+content: ‘’;
+position: fixed;
+top: -100px; left: -100px;
+width: 400px; height: 400px;
+background: radial-gradient(circle, rgba(255,192,203,0.5) 0%, transparent 70%);
+border-radius: 50%;
+pointer-events: none;
+z-index: 0;
+animation: float 8s ease-in-out infinite;
+}
+body::after {
+content: ‘’;
+position: fixed;
+bottom: -80px; right: -80px;
+width: 350px; height: 350px;
+background: radial-gradient(circle, rgba(233,30,140,0.15) 0%, transparent 70%);
+border-radius: 50%;
+pointer-events: none;
+z-index: 0;
+animation: float 10s ease-in-out infinite reverse;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-30px)} }
+
+/* ===== NAVBAR ===== */
+nav {
+position: sticky; top: 0; z-index: 100;
+background: rgba(255,255,255,0.85);
+backdrop-filter: blur(20px);
+border-bottom: 2px solid var(–pink-mid);
+padding: 14px 40px;
+display: flex; align-items: center; justify-content: space-between;
+box-shadow: 0 4px 24px rgba(194,24,91,0.1);
+}
+.logo {
+font-family: ‘Playfair Display’, serif;
+font-size: 28px; font-weight: 700;
+color: var(–pink-deep);
+display: flex; align-items: center; gap: 10px;
+letter-spacing: -0.5px;
+}
+.logo span { font-style: italic; color: var(–pink-main); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+text-decoration: none; color: var(–text-mid);
+font-weight: 600; font-size: 15px;
+transition: color 0.2s;
+position: relative;
+}
+.nav-links a::after {
+content: ‘’; position: absolute; bottom: -4px; left: 0;
+width: 0; height: 2px; background: var(–pink-main);
+transition: width 0.3s;
+}
+.nav-links a:hover { color: var(–pink-deep); }
+.nav-links a:hover::after { width: 100%; }
+
+.cart-btn {
+background: var(–pink-main);
+color: white; border: none; cursor: pointer;
+padding: 10px 22px; border-radius: 50px;
+font-family: ‘Nunito’, sans-serif;
+font-weight: 700; font-size: 15px;
+display: flex; align-items: center; gap: 8px;
+transition: all 0.3s;
+box-shadow: 0 4px 16px rgba(233,30,140,0.3);
+}
+.cart-btn:hover { background: var(–pink-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(233,30,140,0.4); }
+.cart-count {
+background: white; color: var(–pink-main);
+border-radius: 50%; width: 22px; height: 22px;
+font-size: 12px; font-weight: 800;
+display: flex; align-items: center; justify-content: center;
+}
+
+/* ===== HERO ===== */
+.hero {
+position: relative; z-index: 1;
+text-align: center;
+padding: 80px 40px 60px;
+}
+.hero-badge {
+display: inline-block;
+background: rgba(255,255,255,0.8);
+color: var(–pink-deep); font-weight: 700; font-size: 13px;
+padding: 6px 18px; border-radius: 50px;
+border: 1.5px solid var(–pink-mid);
+margin-bottom: 20px;
+letter-spacing: 1px; text-transform: uppercase;
+animation: fadeDown 0.7s ease;
+}
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(42px, 7vw, 80px);
+color: var(–pink-deep);
+line-height: 1.1;
+animation: fadeUp 0.8s ease 0.1s both;
+}
+.hero h1 em { font-style: italic; color: var(–pink-main); }
+.hero p {
+font-size: 18px; color: var(–text-mid);
+max-width: 560px; margin: 18px auto 36px;
+line-height: 1.7;
+animation: fadeUp 0.8s ease 0.2s both;
+}
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.3s both; }
+.btn-primary {
+background: linear-gradient(135deg, var(–pink-main), var(–pink-deep));
+color: white; border: none; cursor: pointer;
+padding: 14px 34px; border-radius: 50px;
+font-family: ‘Nunito’, sans-serif; font-size: 16px; font-weight: 700;
+transition: all 0.3s;
+box-shadow: 0 8px 24px rgba(233,30,140,0.35);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(233,30,140,0.45); }
+.btn-secondary {
+background: white; color: var(–pink-deep);
+border: 2px solid var(–pink-mid); cursor: pointer;
+padding: 14px 34px; border-radius: 50px;
+font-family: ‘Nunito’, sans-serif; font-size: 16px; font-weight: 700;
+transition: all 0.3s;
+}
+.btn-secondary:hover { background: var(–pink-light); transform: translateY(-2px); }
+
+.hero-decor {
+display: flex; justify-content: center; gap: 24px;
+font-size: 40px; margin-top: 40px;
+animation: fadeUp 0.8s ease 0.4s both;
+}
+.hero-decor span { display: inline-block; animation: bounce 2s ease-in-out infinite; }
+.hero-decor span:nth-child(2) { animation-delay: 0.3s; }
+.hero-decor span:nth-child(3) { animation-delay: 0.6s; }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+text-align: center; margin-bottom: 48px;
+position: relative; z-index: 1;
+}
+.section-title h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(28px, 4vw, 44px);
+color: var(–pink-deep);
+margin-bottom: 10px;
+}
+.section-title p { color: var(–text-mid); font-size: 16px; }
+.divider {
+width: 60px; height: 3px;
+background: linear-gradient(90deg, var(–pink-mid), var(–pink-main));
+margin: 14px auto 0; border-radius: 2px;
+}
+
+/* ===== MENU SECTION ===== */
+.menu-section {
+padding: 70px 40px;
+position: relative; z-index: 1;
+}
+.menu-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 28px;
+max-width: 1200px; margin: 0 auto;
+}
+.product-card {
+background: rgba(255,255,255,0.9);
+border-radius: 24px;
+overflow: hidden;
+box-shadow: 0 8px 32px rgba(194,24,91,0.1);
+transition: all 0.35s;
+border: 1.5px solid rgba(255,182,193,0.4);
+position: relative;
+}
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(194,24,91,0.18); }
+.product-img {
+width: 100%; height: 200px;
+display: flex; align-items: center; justify-content: center;
+font-size: 80px;
+position: relative; overflow: hidden;
+}
+.product-img .emoji { position: relative; z-index: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); }
+.badge {
+position: absolute; top: 14px; right: 14px;
+background: var(–pink-main); color: white;
+font-size: 11px; font-weight: 800;
+padding: 4px 12px; border-radius: 50px;
+letter-spacing: 0.5px; text-transform: uppercase;
+}
+.product-body { padding: 22px; }
+.product-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 20px; font-weight: 700;
+color: var(–pink-deep); margin-bottom: 8px;
+}
+.product-desc { color: var(–text-mid); font-size: 13.5px; line-height: 1.6; margin-bottom: 14px; }
+.product-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.meta-tag {
+background: var(–pink-light); color: var(–pink-deep);
+font-size: 11.5px; font-weight: 700;
+padding: 4px 10px; border-radius: 20px;
+}
+.product-footer { display: flex; align-items: center; justify-content: space-between; }
+.price {
+font-size: 22px; font-weight: 800;
+color: var(–pink-main);
+}
+.price span { font-size: 13px; color: var(–text-mid); font-weight: 400; }
+.add-btn {
+background: linear-gradient(135deg, var(–pink-main), var(–pink-deep));
+color: white; border: none; cursor: pointer;
+width: 42px; height: 42px; border-radius: 50%;
+font-size: 22px; font-weight: 300;
+display: flex; align-items: center; justify-content: center;
+transition: all 0.3s;
+box-shadow: 0 4px 12px rgba(233,30,140,0.35);
+}
+.add-btn:hover { transform: scale(1.15) rotate(90deg); box-shadow: 0 8px 20px rgba(233,30,140,0.45); }
+
+/* ===== ORDER SECTION ===== */
+.order-section {
+padding: 70px 40px;
+position: relative; z-index: 1;
+}
+.order-container {
+max-width: 680px; margin: 0 auto;
+background: rgba(255,255,255,0.92);
+border-radius: 32px;
+padding: 48px;
+box-shadow: 0 16px 56px rgba(194,24,91,0.13);
+border: 1.5px solid rgba(255,182,193,0.5);
+}
+.form-group { margin-bottom: 22px; }
+label {
+display: block; font-weight: 700;
+color: var(–pink-deep); font-size: 14px;
+margin-bottom: 8px; letter-spacing: 0.3px;
+}
+input, textarea, select {
+width: 100%;
+padding: 14px 18px;
+border: 2px solid var(–pink-mid);
+border-radius: 14px;
+font-family: ‘Nunito’, sans-serif;
+font-size: 15px;
+color: var(–text-dark);
+background: var(–pink-pale);
+outline: none;
+transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+border-color: var(–pink-main);
+box-shadow: 0 0 0 4px rgba(233,30,140,0.1);
+background: white;
+}
+textarea { height: 100px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.submit-btn {
+width: 100%;
+background: linear-gradient(135deg, var(–pink-main), var(–pink-deep));
+color: white; border: none; cursor: pointer;
+padding: 16px;
+border-radius: 14px;
+font-family: ‘Nunito’, sans-serif;
+font-size: 17px; font-weight: 800;
+letter-spacing: 0.5px;
+transition: all 0.3s;
+box-shadow: 0 8px 24px rgba(233,30,140,0.35);
+margin-top: 8px;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(233,30,140,0.45); }
+
+/* ===== CART PANEL ===== */
+.cart-overlay {
+display: none;
+position: fixed; inset: 0;
+background: rgba(60,0,30,0.35);
+z-index: 200;
+backdrop-filter: blur(4px);
+animation: fadeIn 0.2s ease;
+}
+.cart-overlay.open { display: block; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.cart-panel {
+position: fixed; top: 0; right: -420px;
+width: 400px; max-width: 95vw;
+height: 100vh;
+background: white;
+z-index: 201;
+box-shadow: -8px 0 48px rgba(194,24,91,0.18);
+transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+display: flex; flex-direction: column;
+border-left: 3px solid var(–pink-mid);
+}
+.cart-panel.open { right: 0; }
+.cart-header {
+padding: 24px 28px;
+border-bottom: 2px solid var(–pink-light);
+display: flex; align-items: center; justify-content: space-between;
+}
+.cart-header h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 22px; color: var(–pink-deep);
+}
+.close-btn {
+background: var(–pink-light); border: none; cursor: pointer;
+width: 36px; height: 36px; border-radius: 50%;
+font-size: 18px; color: var(–pink-deep);
+display: flex; align-items: center; justify-content: center;
+transition: background 0.2s;
+}
+.close-btn:hover { background: var(–pink-mid); color: white; }
+.cart-items { flex: 1; overflow-y: auto; padding: 20px 28px; }
+.cart-empty { text-align: center; color: var(–text-mid); padding: 48px 0; font-size: 16px; }
+.cart-item {
+display: flex; gap: 14px; align-items: center;
+padding: 14px 0; border-bottom: 1px solid var(–pink-light);
+}
+.cart-item-emoji { font-size: 32px; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-weight: 700; color: var(–pink-deep); font-size: 14px; }
+.cart-item-price { color: var(–pink-main); font-weight: 600; font-size: 13px; }
+.qty-ctrl { display: flex; align-items: center; gap: 8px; }
+.qty-btn {
+background: var(–pink-light); border: none; cursor: pointer;
+width: 26px; height: 26px; border-radius: 50%;
+font-size: 16px; color: var(–pink-deep);
+display: flex; align-items: center; justify-content: center;
+transition: background 0.2s;
+}
+.qty-btn:hover { background: var(–pink-mid); color: white; }
+.qty-num { font-weight: 700; color: var(–text-dark); min-width: 20px; text-align: center; }
+.cart-footer {
+padding: 20px 28px;
+border-top: 2px solid var(–pink-light);
+background: var(–pink-pale);
+}
+.cart-total {
+display: flex; justify-content: space-between; align-items: center;
+margin-bottom: 16px;
+}
+.cart-total span:first-child { font-weight: 700; color: var(–text-mid); font-size: 15px; }
+.cart-total span:last-child { font-size: 22px; font-weight: 800; color: var(–pink-main); }
+.checkout-btn {
+width: 100%;
+background: linear-gradient(135deg, var(–pink-main), var(–pink-deep));
+color: white; border: none; cursor: pointer;
+padding: 14px; border-radius: 14px;
+font-family: ‘Nunito’, sans-serif;
+font-size: 16px; font-weight: 800;
+transition: all 0.3s;
+box-shadow: 0 6px 18px rgba(233,30,140,0.3);
+}
+.checkout-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(233,30,140,0.4); }
+
+/* ===== HOW IT WORKS ===== */
+.how-section {
+padding: 70px 40px;
+position: relative; z-index: 1;
+}
+.steps-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 24px; max-width: 1000px; margin: 0 auto;
+}
+.step-card {
+background: rgba(255,255,255,0.85);
+border-radius: 20px; padding: 28px 22px;
+text-align: center;
+border: 1.5px solid rgba(255,182,193,0.5);
+box-shadow: 0 4px 20px rgba(194,24,91,0.08);
+transition: transform 0.3s;
+}
+.step-card:hover { transform: translateY(-6px); }
+.step-num {
+width: 44px; height: 44px; border-radius: 50%;
+background: linear-gradient(135deg, var(–pink-main), var(–pink-deep));
+color: white; font-weight: 800; font-size: 18px;
+display: flex; align-items: center; justify-content: center;
+margin: 0 auto 14px;
+box-shadow: 0 4px 12px rgba(233,30,140,0.3);
+}
+.step-icon { font-size: 28px; margin-bottom: 10px; }
+.step-title { font-weight: 700; color: var(–pink-deep); font-size: 15px; margin-bottom: 6px; }
+.step-desc { color: var(–text-mid); font-size: 13px; line-height: 1.5; }
+
+/* ===== TOAST ===== */
+.toast {
+position: fixed; bottom: 30px; left: 50%;
+transform: translateX(-50%) translateY(100px);
+background: linear-gradient(135deg, var(–pink-main), var(–pink-deep));
+color: white; padding: 14px 28px;
+border-radius: 50px; font-weight: 700; font-size: 15px;
+box-shadow: 0 8px 24px rgba(194,24,91,0.35);
+z-index: 300; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ===== FOOTER ===== */
+footer {
+background: rgba(255,255,255,0.8);
+border-top: 2px solid var(–pink-mid);
+padding: 40px 40px 28px;
+text-align: center;
+position: relative; z-index: 1;
+}
+.footer-logo {
+font-family: ‘Playfair Display’, serif;
+font-size: 26px; color: var(–pink-deep); font-weight: 700;
+margin-bottom: 10px;
+}
+.footer-logo em { font-style: italic; color: var(–pink-main); }
+footer p { color: var(–text-mid); font-size: 14px; margin: 6px 0; }
+.footer-copy { margin-top: 24px; color: #bbb; font-size: 13px; border-top: 1px solid var(–pink-light); padding-top: 18px; }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+display: none; position: fixed; inset: 0;
+background: rgba(60,0,30,0.45); z-index: 300;
+backdrop-filter: blur(6px);
+align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+background: white; border-radius: 28px;
+padding: 48px 40px; max-width: 460px; width: 90%;
+text-align: center;
+box-shadow: 0 24px 80px rgba(194,24,91,0.2);
+animation: popIn 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes popIn { from{transform:scale(0.85);opacity:0} to{transform:scale(1);opacity:1} }
+.modal .check { font-size: 64px; margin-bottom: 14px; }
+.modal h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 26px; color: var(–pink-deep); margin-bottom: 12px;
+}
+.modal p { color: var(–text-mid); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+.modal-close {
+background: linear-gradient(135deg, var(–pink-main), var(–pink-deep));
+color: white; border: none; cursor: pointer;
+padding: 13px 36px; border-radius: 50px;
+font-family: ‘Nunito’, sans-serif; font-weight: 800; font-size: 15px;
+transition: all 0.3s;
+box-shadow: 0 6px 18px rgba(233,30,140,0.3);
+}
+.modal-close:hover { transform: translateY(-2px); }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 640px) {
+nav { padding: 12px 20px; }
+.nav-links { display: none; }
+.hero { padding: 50px 20px 40px; }
+.menu-section, .order-section, .how-section { padding: 50px 20px; }
+.order-container { padding: 28px 22px; }
+.form-row { grid-template-columns: 1fr; }
+footer { padding: 30px 20px 20px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <div class="logo">🎀 Fresh <span>Bakery</span></div>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#order">Đặt Hàng</a></li>
+    <li><a href="#how">Hướng Dẫn</a></li>
+    <li><a href="#contact">Liên Hệ</a></li>
+  </ul>
+  <button class="cart-btn" onclick="toggleCart()">
+    🛒 Giỏ Hàng <span class="cart-count" id="cartCount">0</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-badge">✨ Handmade with love · Giao hàng tận nơi</div>
+  <h1>Bánh Ngọt <em>Tươi</em><br>Mỗi Ngày 🎂</h1>
+  <p>Những chiếc bánh được làm thủ công với nguyên liệu tươi ngon, gửi trọn tình yêu đến từng khách hàng.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">🍪 Xem Menu</button>
+    <button class="btn-secondary" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">📦 Đặt Hàng Ngay</button>
+  </div>
+  <div class="hero-decor">
+    <span>🍪</span><span>🧁</span><span>🍫</span>
+  </div>
+</section>
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+  <div class="section-title">
+    <h2>🍰 Thực Đơn Bánh Ngọt</h2>
+    <p>Các loại bánh được làm mới mỗi ngày từ nguyên liệu tươi nhất</p>
+    <div class="divider"></div>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="how-section" id="how">
+  <div class="section-title">
+    <h2>📋 Hướng Dẫn Đặt Hàng</h2>
+    <p>Chỉ vài bước đơn giản để nhận bánh tại nhà</p>
+    <div class="divider"></div>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-icon">🌐</div>
+      <div class="step-title">Vào Trang Web</div>
+      <div class="step-desc">Truy cập Fresh Bakery và khám phá thực đơn phong phú</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-icon">🍪</div>
+      <div class="step-title">Chọn Bánh</div>
+      <div class="step-desc">Xem mô tả, thành phần và thêm vào giỏ hàng</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-icon">📝</div>
+      <div class="step-title">Điền Thông Tin</div>
+      <div class="step-desc">Nhập tên, địa chỉ và số điện thoại giao hàng</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-icon">✅</div>
+      <div class="step-title">Xác Nhận Đơn</div>
+      <div class="step-desc">Nhấn đặt hàng, chúng tôi xác nhận và chuẩn bị ngay</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-icon">🚚</div>
+      <div class="step-title">Giao Hàng Tận Nơi</div>
+      <div class="step-desc">Bánh được đóng gói đẹp và giao đến tay bạn</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+
+<section class="order-section" id="order">
+  <div class="section-title">
+    <h2>📦 Đặt Hàng Online</h2>
+    <p>Điền thông tin để chúng tôi giao bánh đến bạn</p>
+    <div class="divider"></div>
+  </div>
+  <div class="order-container">
+    <div class="form-row">
+      <div class="form-group">
+        <label>👤 Họ & Tên *</label>
+        <input type="text" id="custName" placeholder="Nguyễn Văn A" required>
+      </div>
+      <div class="form-group">
+        <label>📞 Số Điện Thoại *</label>
+        <input type="tel" id="custPhone" placeholder="0912 345 678" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>📍 Địa Chỉ Giao Hàng *</label>
+      <input type="text" id="custAddress" placeholder="123 Đường ABC, Quận 1, TP.HCM" required>
+    </div>
+    <div class="form-group">
+      <label>🎂 Sản Phẩm Muốn Đặt *</label>
+      <select id="productSelect">
+        <option value="">-- Chọn sản phẩm --</option>
+        <option value="Cookies">🍪 Cookies – 45,000đ/hộp</option>
+        <option value="Brownies">🍫 Brownies – 55,000đ/hộp</option>
+        <option value="Bánh Dứa">🍍 Bánh Dứa – 50,000đ/hộp</option>
+        <option value="Bánh Chà Bông">🥐 Bánh Chà Bông – 48,000đ/hộp</option>
+        <option value="Baby Pancake">🥞 Baby Pancake – 40,000đ/set</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>🔢 Số Lượng</label>
+      <input type="number" id="custQty" placeholder="1" min="1" value="1">
+    </div>
+    <div class="form-group">
+      <label>💬 Ghi Chú Đặc Biệt</label>
+      <textarea id="custNote" placeholder="Ví dụ: không đường, có hộp quà tặng, giao buổi chiều..."></textarea>
+    </div>
+    <button class="submit-btn" onclick="submitOrder()">🛍️ Đặt Hàng Ngay</button>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+
+<footer id="contact">
+  <div class="footer-logo">🎀 Fresh <em>Bakery</em></div>
+  <p>📍 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+  <p>📞 0901 234 567 &nbsp;|&nbsp; 📧 freshbakery@email.com</p>
+  <p>🕐 Mở cửa: 7:00 – 20:00 · Thứ 2 – Chủ Nhật</p>
+  <div class="footer-copy">© 2024 Fresh Bakery · Làm bằng 💕 tại Việt Nam</div>
+</footer>
+
+<!-- CART PANEL -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>🛒 Giỏ Hàng</h3>
+    <button class="close-btn" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">🛒 Giỏ hàng đang trống<br><small>Thêm bánh vào giỏ nhé!</small></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Tổng cộng:</span>
+      <span id="cartTotal">0đ</span>
+    </div>
+    <button class="checkout-btn" onclick="goCheckout()">🎀 Thanh Toán & Đặt Hàng</button>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <div class="check">🎉</div>
+    <h3>Đặt Hàng Thành Công!</h3>
+    <p id="successMsg">Cảm ơn bạn đã tin tưởng Fresh Bakery! Chúng tôi sẽ liên hệ xác nhận đơn hàng sớm nhất. Bánh ngon đang trên đường đến tay bạn! 🍪💕</p>
+    <button class="modal-close" onclick="closeModal()">Tuyệt Vời! 🎀</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+<script>
+// Product data
+const products = [
+  {
+    id: 1, name: "Cookies", emoji: "🍪",
+    price: 45000, priceStr: "45,000đ",
+    badge: "Bestseller",
+    desc: "Bánh quy giòn tan, thơm bơ mịn màng. Có nhiều vị: chocolate chip, yến mạch, dừa sữa.",
+    tags: ["Bơ Nhập Khẩu", "Không Phẩm Màu", "200g/hộp"],
+    bg: "linear-gradient(135deg, #fff0e6 0%, #ffe0cc 100%)"
+  },
+  {
+    id: 2, name: "Brownies", emoji: "🍫",
+    price: 55000, priceStr: "55,000đ",
+    badge: "Hot",
+    desc: "Bánh brownie đậm đà vị cacao Bỉ, mềm ẩm bên trong, vỏ ngoài giòn nhẹ. Phủ chocolate đen thượng hạng.",
+    tags: ["Cacao Bỉ", "Không Gluten", "180g/hộp"],
+    bg: "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)"
+  },
+  {
+    id: 3, name: "Bánh Dứa", emoji: "🍍",
+    price: 50000, priceStr: "50,000đ",
+    badge: "Mới",
+    desc: "Bánh dứa truyền thống Đài Loan phong cách Việt. Nhân dứa thơm ngọt, vỏ bánh mềm tan chảy.",
+    tags: ["Nhân Dứa Tươi", "Không Chất Bảo Quản", "250g/hộp"],
+    bg: "linear-gradient(135deg, #fffde7 0%, #fff9c4 100%)"
+  },
+  {
+    id: 4, name: "Bánh Chà Bông", emoji: "🥐",
+    price: 48000, priceStr: "48,000đ",
+    badge: null,
+    desc: "Bánh mì ngọt nhân chà bông heo thơm, pha trộn với sốt mayonnaise đặc biệt. Vỏ bánh vàng ươm.",
+    tags: ["Chà Bông Heo", "Nướng Tươi", "220g/túi"],
+    bg: "linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%)"
+  },
+  {
+    id: 5, name: "Baby Pancake", emoji: "🥞",
+    price: 40000, priceStr: "40,000đ",
+    badge: "Yêu Thích",
+    desc: "Pancake mini xốp mịn, ăn kèm sốt mật ong & bơ tươi. Thích hợp cho bé và cả gia đình.",
+    tags: ["Không Đường Tinh Luyện", "Phù Hợp Trẻ Em", "10 cái/set"],
+    bg: "linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%)"
+  }
+];
+
+// Cart state
+let cart = [];
+
+// Render menu
+function renderMenu() {
+  const grid = document.getElementById('menuGrid');
+  grid.innerHTML = products.map(p => `
+    <div class="product-card">
+      <div class="product-img" style="background:${p.bg}">
+        <span class="emoji">${p.emoji}</span>
+        ${p.badge ? `<div class="badge">${p.badge}</div>` : ''}
+      </div>
+      <div class="product-body">
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-meta">${p.tags.map(t => `<span class="meta-tag">${t}</span>`).join('')}</div>
+        <div class="product-footer">
+          <div class="price">${p.priceStr} <span>/ hộp</span></div>
+          <button class="add-btn" onclick="addToCart(${p.id})" title="Thêm vào giỏ">+</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+  const existing = cart.find(c => c.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...product, qty: 1 });
+  }
+  updateCart();
+  showToast(`${product.emoji} ${product.name} đã thêm vào giỏ!`);
+}
+
+function updateCart() {
+  const count = cart.reduce((s, c) => s + c.qty, 0);
+  const total = cart.reduce((s, c) => s + c.price * c.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartTotal').textContent = total.toLocaleString('vi-VN') + 'đ';
+
+  const itemsEl = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    itemsEl.innerHTML = '<div class="cart-empty">🛒 Giỏ hàng đang trống<br><small>Thêm bánh vào giỏ nhé!</small></div>';
+    return;
+  }
+  itemsEl.innerHTML = cart.map((c, i) => `
+    <div class="cart-item">
+      <div class="cart-item-emoji">${c.emoji}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${c.name}</div>
+        <div class="cart-item-price">${(c.price * c.qty).toLocaleString('vi-VN')}đ</div>
+      </div>
+      <div class="qty-ctrl">
+        <button class="qty-btn" onclick="changeQty(${i}, -1)">−</button>
+        <span class="qty-num">${c.qty}</span>
+        <button class="qty-btn" onclick="changeQty(${i}, 1)">+</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function changeQty(index, delta) {
+  cart[index].qty += delta;
+  if (cart[index].qty <= 0) cart.splice(index, 1);
+  updateCart();
+}
+
+function toggleCart() {
+  document.getElementById('cartOverlay').classList.toggle('open');
+  document.getElementById('cartPanel').classList.toggle('open');
+}
+
+function goCheckout() {
+  toggleCart();
+  document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+}
+
+function submitOrder() {
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  const product = document.getElementById('productSelect').value;
+
+  if (!name || !phone || !address || !product) {
+    showToast('⚠️ Vui lòng điền đầy đủ thông tin!');
+    return;
+  }
+
+  // Save order info
+  const order = {
+    id: Date.now(),
+    name, phone, address, product,
+    qty: document.getElementById('custQty').value,
+    note: document.getElementById('custNote').value,
+    time: new Date().toLocaleString('vi-VN'),
+    cartItems: [...cart]
+  };
+  console.log('Order placed:', order);
+
+  // Show success modal
+  document.getElementById('successMsg').textContent =
+    `Cảm ơn ${name}! Chúng tôi sẽ gọi số ${phone} để xác nhận đơn và giao đến: ${address}. 🍪💕`;
+  document.getElementById('successModal').classList.add('open');
+
+  // Clear form
+  ['custName','custPhone','custAddress','custNote'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('productSelect').value = '';
+  document.getElementById('custQty').value = '1';
+  cart = [];
+  updateCart();
+}
+
+function closeModal() {
+  document.getElementById('successModal').classList.remove('open');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+renderMenu();
+</script>
+
+</body>
+</html>
